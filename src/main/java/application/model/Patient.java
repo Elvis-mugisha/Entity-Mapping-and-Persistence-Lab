@@ -10,6 +10,20 @@ public class Patient {
 
     private String patientNumber;
     private String name;
+
+    public Patient(Doctor doctor, Ward ward, String bedNumber, String diagnosis, String phoneNumber, String address, String name, String surname, String patientNumber, Long id) {
+        this.doctor = doctor;
+        this.ward = ward;
+        this.bedNumber = bedNumber;
+        this.diagnosis = diagnosis;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.name = name;
+        this.surname = surname;
+        this.patientNumber = patientNumber;
+        this.id = id;
+    }
+
     private String surname;
     private String address;
     private String phoneNumber;

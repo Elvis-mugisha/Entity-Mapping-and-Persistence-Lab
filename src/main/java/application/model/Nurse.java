@@ -1,41 +1,25 @@
 package application.model;
 
-
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Data
+@NoArgsConstructor
+public class Nurse extends Employee {
+    private String rotation;
+    private double salary;
 
-    @Entity
-    public class Nurse extends Employee {
-        private String rotation;
-        private double salary;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
-        public Department getDepartment() {
-            return department;
-        }
-
-        public void setDepartment(Department department) {
-            this.department = department;
-        }
-
-        public double getSalary() {
-            return salary;
-        }
-
-        public void setSalary(double salary) {
-            this.salary = salary;
-        }
-
-        public String getRotation() {
-            return rotation;
-        }
-
-        public void setRotation(String rotation) {
-            this.rotation = rotation;
-        }
-
-        @ManyToOne
-        @JoinColumn(name = "department_id")
-        private Department department;
-
-        // Getters and Setters
+    // Constructor with parameters
+    public Nurse(String phoneNumber, String address, String firstName, String surname, String employeeNumber, Long id, Department department, double salary, String rotation) {
+        super(phoneNumber, address, firstName, surname, employeeNumber, id);
+        this.department = department;
+        this.salary = salary;
+        this.rotation = rotation;
+    }
 }

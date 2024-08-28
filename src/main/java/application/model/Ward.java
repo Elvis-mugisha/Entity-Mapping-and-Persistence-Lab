@@ -16,6 +16,15 @@ public class Ward {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    public Ward(Long id, List<Patient> patients, Nurse supervisor, Department department, int numberOfBeds, String wardNumber) {
+        this.id = id;
+        this.patients = patients;
+        this.supervisor = supervisor;
+        this.department = department;
+        this.numberOfBeds = numberOfBeds;
+        this.wardNumber = wardNumber;
+    }
+
     @OneToOne
     @JoinColumn(name = "supervisor_id")
     private Nurse supervisor;

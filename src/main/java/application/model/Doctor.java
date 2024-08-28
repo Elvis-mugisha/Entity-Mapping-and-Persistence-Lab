@@ -1,13 +1,17 @@
 package application.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 
 @Entity
 public class Doctor extends Employee {
     private String specialty;
 
-    // Getters and Setters
+    // Default constructor
+    public Doctor() {
+        super();
+    }
 
+    // Getters and Setters
     public String getSpecialty() {
         return specialty;
     }

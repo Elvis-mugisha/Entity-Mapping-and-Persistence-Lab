@@ -12,7 +12,7 @@
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
-    <description>A Spring Boot application focused on sprint boot security</description>
+    <description>A Spring Boot application focused JPA</description>
 
     <url/>
     <licenses>
@@ -57,10 +57,6 @@
         </dependency>
 
         <!--         Spring Security for authentication and access control -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

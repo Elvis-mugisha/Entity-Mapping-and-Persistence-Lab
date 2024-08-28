@@ -13,6 +13,16 @@ public class Department {
     private String name;
     private String building;
 
+    public Department(Long id, List<Nurse> nurses, List<Ward> wards, Doctor director, String building, String name, String code) {
+        this.id = id;
+        this.nurses = nurses;
+        this.wards = wards;
+        this.director = director;
+        this.building = building;
+        this.name = name;
+        this.code = code;
+    }
+
     @OneToOne
     @JoinColumn(name = "director_id")
     private Doctor director;
