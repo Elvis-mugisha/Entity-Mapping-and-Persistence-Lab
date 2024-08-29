@@ -1,0 +1,29 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 https://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <!-- Cache configuration for employees list -->
+    <cache alias="employees">
+        <key-type>java.lang.Long</key-type>
+        <value-type>application.model.Employee</value-type>
+        <resources>
+            <heap unit="entries">500</heap> <!-- Adjust as needed -->
+        </resources>
+        <expiry>
+            <ttl unit="seconds">600</ttl> <!-- Time-to-live (TTL) in seconds -->
+        </expiry>
+    </cache>
+
+    <!-- Cache configuration for individual employee -->
+    <cache alias="employee">
+        <key-type>java.lang.Long</key-type>
+        <value-type>application.model.Employee</value-type>
+        <resources>
+            <heap unit="entries">500</heap> <!-- Adjust as needed -->
+        </resources>
+        <expiry>
+            <ttl unit="seconds">600</ttl> <!-- Time-to-live (TTL) in seconds -->
+        </expiry>
+    </cache>
+
+</config>

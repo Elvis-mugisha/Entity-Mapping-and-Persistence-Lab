@@ -43,7 +43,7 @@ public class EmployeeController {
     // Update Employee
     @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {
-        Optional<Employee> updatedEmployee = employeeService.updateEmployee(id, employeeDetails);
+        Optional<Employee> updatedEmployee = Optional.ofNullable(employeeService.updateEmployee(id, employeeDetails));
         return updatedEmployee.map(employee -> new ResponseEntity<>(employee, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
